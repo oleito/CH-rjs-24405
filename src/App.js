@@ -1,7 +1,7 @@
-import './App.scss';
-import NavBar from './Components/NavBar';
-import ItemListContainer from './Components/ItemListContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.scss";
+import NavBar from "./Components/NavBar";
+import ItemListContainer from "./Components/ItemListContainer";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <NavBar />
       </header>
       <section className="container text-center">
-        <ItemListContainer />
+        <ItemListContainer greeting={"Mensaje para mostrar"} />
       </section>
     </div>
   );
