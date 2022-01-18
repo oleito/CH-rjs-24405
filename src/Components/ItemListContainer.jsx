@@ -1,5 +1,6 @@
 import React from "react";
 import ItemCount from "./ItemCount";
+import ItemList from "./ItemList";
 
 export default function ItemListContainer(props) {
   function onAdd() {
@@ -8,7 +9,8 @@ export default function ItemListContainer(props) {
   return (
     <>
       <h3> {props.greeting} </h3>
-      <ItemCount stock={0} initial={1} onAdd={onAdd} />
+      {/* <ItemCount stock={0} initial={1} onAdd={onAdd} /> */}
+      <ItemList />
     </>
   );
 }
