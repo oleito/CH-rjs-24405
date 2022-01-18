@@ -13,15 +13,15 @@ export default function ItemListContainer(props) {
       description: "Descripcion del producto",
       price: 123.45,
       stock: 23,
-      pictureUrl: "https://via.placeholder.com/200x300",
+      pictureUrl: "https://picsum.photos/id/176/300/360",
     },
     {
       id: "mb-48",
       title: "Titulo de prueba 2",
       description: "Descripcion del segundo producto",
       price: 678.9,
-      stock: 23,
-      pictureUrl: "https://via.placeholder.com/200x300",
+      stock: 17,
+      pictureUrl: "https://picsum.photos/id/217/300/360",
     },
   ];
 

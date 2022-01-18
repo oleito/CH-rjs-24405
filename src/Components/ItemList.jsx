@@ -4,9 +4,11 @@ import Item from "./Item";
 export default function ItemList(props) {
   return (
     <>
-      {props.itemList.map((item) => {
-        return <Item item={item} />;
-      })}
+      <div className="d-flex">
+        {props.itemList.map((item) => {
+          return <Item item={item} />;
+        })}
+      </div>
     </>
   );
 }
