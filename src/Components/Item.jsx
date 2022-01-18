@@ -10,7 +10,9 @@ export default function Item(props) {
           <img className="img img-fluid" src={props.item.pictureUrl} alt="" />
         </div>
         <div className="item-description">{props.item.description}</div>
-        <Button variant="outline-primary" size="sm">Ver detalle del producto</Button>
+        <Button variant="outline-primary" size="sm">
+          Ver detalle del producto
+        </Button>
         <div className="item-price">$ {props.item.price}</div>
         <div className="item-stock">Stock: {props.item.stock}</div>
       </div>
