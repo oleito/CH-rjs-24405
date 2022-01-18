@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 
@@ -25,12 +25,18 @@ export default function ItemListContainer(props) {
     },
   ];
 
-  const [itemList, serItemList] = useState([]);
+  const [itemList, setItemList] = useState([]);
 
   const obtenerProductos = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(ItemListJson);
     }, 2000);
+  });
+
+  useEffect(() => {
+    obtenerProductos.then((res) => {
+      setItemList(res);
+    });
   });
 
   return (
