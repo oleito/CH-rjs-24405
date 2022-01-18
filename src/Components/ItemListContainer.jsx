@@ -28,9 +28,11 @@ export default function ItemListContainer(props) {
   const [itemList, serItemList] = useState([]);
 
   const obtenerProductos = new Promise((resolve, reject) => {
-
+    setTimeout(() => {
+      resolve(ItemListJson);
+    }, 2000);
   });
-  
+
   return (
     <>
       <h3> {props.greeting} </h3>
