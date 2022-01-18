@@ -4,7 +4,9 @@ import Item from "./Item";
 export default function ItemList(props) {
   return (
     <>
-      <Item />
+      {props.itemList.map((item) => {
+        return <Item item={item} />;
+      })}
     </>
   );
 }
