@@ -1,0 +1,36 @@
+.item-card {
+    width: 230px;
+    height: auto;
+    margin: 10px;
+    padding: 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .item-header {
+        background-color: #ddd;
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+    .item-img {
+    }
+    .item-description {
+        padding-bottom: 4px;
+    }
+    Button {
+        margin-top: auto;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .item-price {
+        text-align: left;
+        margin-left: 5px;
+    }
+    .item-stock {
+        background-color: #ccc;
+        bottom: 0;
+        padding: 3px;
+    }
+}
