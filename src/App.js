@@ -11,10 +11,10 @@ function App() {
         <NavBar />
       </header>
       <section className="container text-center">
-        <ItemDetailContainer greeting={"Mensaje para mostrar"} />
+        <ItemDetailContainer greeting={"ItemDetailContainer"} />
       </section>
       <section className="container text-center">
-        <ItemListContainer greeting={"Mensaje para mostrar"} />
+        <ItemListContainer greeting={"ItemListContainer"} />
       </section>
     </div>
   );
