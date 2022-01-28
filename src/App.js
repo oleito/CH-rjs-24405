@@ -1,6 +1,7 @@
 import "./App.scss";
 import NavBar from "./Components/NavBar";
 import ItemListContainer from "./Components/ItemListContainer";
+import ItemDetailContainer from "./Components/ItemDetailContainer"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -10,7 +11,10 @@ function App() {
         <NavBar />
       </header>
       <section className="container text-center">
-        <ItemListContainer greeting={"Mensaje para mostrar"} />
+        <ItemDetailContainer greeting={"ItemDetailContainer"} />
+      </section>
+      <section className="container text-center">
+        <ItemListContainer greeting={"ItemListContainer"} />
       </section>
     </div>
   );

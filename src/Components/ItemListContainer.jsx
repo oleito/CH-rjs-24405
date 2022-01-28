@@ -42,7 +42,6 @@ export default function ItemListContainer(props) {
   return (
     <>
       <h3> {props.greeting} </h3>
-      {/* <ItemCount stock={0} initial={1} onAdd={onAdd} /> */}
       <ItemList itemList={itemList} />
     </>
   );
