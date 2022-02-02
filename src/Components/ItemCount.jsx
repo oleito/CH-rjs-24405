@@ -6,7 +6,7 @@ export default function ItemCount(props) {
 
   return (
     <>
-      <div style={{ width: "200px" }}>
+      <div style={{ width: "auto" }}>
         <div className="d-flex flex-row justify-content-between">
           <Button
             disabled={count < 1}
@@ -27,7 +27,7 @@ export default function ItemCount(props) {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button variant="outline-primary" onClick={() => props.onAdd()}>
+          <Button variant="outline-primary" onClick={() => props.onAdd(true)}>
             Agregar al carrito
           </Button>
         </div>
