@@ -11,7 +11,7 @@ export default function ItemList(props) {
           })}
         </div>
       ) : (
-        <div>Cargando...</div>
+        <div>No hay items aun..</div>
       )}
     </>
   );

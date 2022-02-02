@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Item(props) {
   return (
@@ -11,7 +12,9 @@ export default function Item(props) {
         </div>
         <div className="item-description">{props.item.description}</div>
         <Button variant="outline-primary" size="sm">
-          Ver detalle del producto
+          <Link to={`/item/${props.item.id}`}>
+            Ver detalle del producto
+          </Link>
         </Button>
         <div className="item-price">$ {props.item.price}</div>
         <div className="item-stock">Stock: {props.item.stock}</div>
