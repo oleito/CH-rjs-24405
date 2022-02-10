@@ -21,10 +21,10 @@ export default function ItemDetail({ item }) {
                         <p style={{ marginTop: "auto" }}>$ {item.price}</p>
                         {
                             !estado &&
-                            <ItemCount stock={item.stock} initial={1} onAdd={setEstado} ></ItemCount>
+                            <ItemCount id={item.id} stock={item.stock} initial={1} onAdd={setEstado} ></ItemCount>
                         }
                         <div className="mt-auto">
-                      
+
                             <Button variant="outline-primary" size="sm">
                                 <Link to={`/cart`}>
                                     Finalizar compra
