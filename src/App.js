@@ -5,6 +5,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer"
 import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartContext from "./context/cartContext";
+import Cart from "./Components/Cart";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
               </Route>
               <Route path={"/item/:itemId"}>
                 <ItemDetailContainer greeting={"Item Detail"} />
+              </Route>
+              <Route path={"/cart"}>
+                <Cart></Cart>
               </Route>
             </section>
           </Switch>

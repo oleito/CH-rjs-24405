@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function ItemDetail({ item }) {
 
     const [estado, setEstado] = useState(false);
-    console.log(item);
+
     return (
         <>
             {item ? (
@@ -21,7 +21,7 @@ export default function ItemDetail({ item }) {
                         <p style={{ marginTop: "auto" }}>$ {item.price}</p>
                         {
                             !estado &&
-                            <ItemCount id={item.id} stock={item.stock} initial={1} onAdd={setEstado} ></ItemCount>
+                            <ItemCount item={item} id={item.id} stock={item.stock} initial={1} onAdd={setEstado} ></ItemCount>
                         }
                         <div className="mt-auto">
 
