@@ -23,35 +23,47 @@ export default function Cart() {
     return (
         <>
             <h5>Total: ${cartTotal}</h5>
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {cartList.map(item => {
-
-                        return (
-                            <>
+            {cartList.length > 0 ?
+                (
+                    <div>
+                        <Table striped bordered hover>
+                            <thead>
                                 <tr>
-                                    <td>{item.id}</td>
-                                    <td>{item.description}</td>
-                                    <td>{item.price}</td>
-                                    <td>{item.quantity}</td>
-                                    <td>{itemTotalCalc(item)}</td>
-                                    <td>
-                                        <Button variant="danger" onClick={() => { removeItem(item); }} size="sm">Remover</Button></td>
+                                    <th>ID</th>
+                                    <th>Descripcion</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
                                 </tr>
-                            </>
-                        )
-                    })}
-                </tbody>
-            </Table>
+                            </thead>
+                            <tbody>
+                                {cartList.map(item => {
+                                    return (
+                                        <>
+                                            <tr>
+                                                <td>{item.id}</td>
+                                                <td>{item.description}</td>
+                                                <td>{item.price}</td>
+                                                <td>{item.quantity}</td>
+                                                <td>{itemTotalCalc(item)}</td>
+                                                <td>
+                                                    <Button variant="danger" onClick={() => { removeItem(item); }} size="sm">Remover</Button></td>
+                                            </tr>
+                                        </>
+                                    )
+                                })}
+                            </tbody>
+                        </Table>
+                        <Button>Terminar Compra</Button>
+                    </div>
+                )
+                :
+                (
+                    <p>
+                        No se encontraron items
+                    </p>
+                )}
+
         </>
     );
 }
