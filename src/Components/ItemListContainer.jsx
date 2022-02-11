@@ -57,37 +57,19 @@ export default function ItemListContainer(props) {
   });
 
   useEffect(() => {
-    console.log("cargando");
-
     const db = getFirestore();
-
     const itemCollection = db.collection("items");
+
     itemCollection.get().then((qs) => {
       if (qs.size === 0) {
         console.log("No hay registros");
       }
-      console.log("Hay registros");
-
-      console.log(qs.docs.map(doc => doc.data()));
+      setItemList(qs.docs.map(doc => { return { id: doc.id, ...doc.data() } }));
     }).catch((error) => {
       console.log(error);
     })
+
   }, [])
-
-  useEffect(() => {
-    setItemList([]);
-    obtenerProductos.then((res) => {
-      if (categoryId) {
-        let filtrado = res.filter((item) => {
-          return item.category === categoryId
-        })
-        setItemList(filtrado);
-        return
-      }
-      setItemList(res);
-    });
-  }, [categoryId]);
-
 
   return (
     <>
