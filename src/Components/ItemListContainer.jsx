@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import { getFirestore } from '../firebase/firebase'
 
 export default function ItemListContainer(props) {
   function onAdd() {
@@ -54,6 +55,24 @@ export default function ItemListContainer(props) {
       resolve(ItemListJson);
     }, 2000);
   });
+
+  useEffect(() => {
+    console.log("cargando");
+
+    const db = getFirestore();
+
+    const itemCollection = db.collection("items");
+    itemCollection.get().then((qs) => {
+      if (qs.size === 0) {
+        console.log("No hay registros");
+      }
+      console.log("Hay registros");
+
+      console.log(qs.docs.map(doc => doc.data()));
+    }).catch((error) => {
+      console.log(error);
+    })
+  }, [])
 
   useEffect(() => {
     setItemList([]);
