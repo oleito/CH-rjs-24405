@@ -30,7 +30,7 @@ export default function ItemCount(props) {
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button variant="outline-primary" onClick={() => addItem({ quantity: count, ...props })}>
+          <Button variant="outline-primary" onClick={() => addItem({ quantity: count, ...props.item })}>
             Agregar al context
           </Button>
         </div>
