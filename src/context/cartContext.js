@@ -59,7 +59,6 @@ export default function CartContext({ children }) {
         }
         setCartTotal(total);
         setCartCount(count);
-        debugger
     }
 
     return (

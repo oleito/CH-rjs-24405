@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
+import { getFirestore } from '../firebase/firebase'
 
 export default function ItemListContainer(props) {
   function onAdd() {
@@ -56,19 +57,19 @@ export default function ItemListContainer(props) {
   });
 
   useEffect(() => {
-    setItemList([]);
-    obtenerProductos.then((res) => {
-      if (categoryId) {
-        let filtrado = res.filter((item) => {
-          return item.category === categoryId
-        })
-        setItemList(filtrado);
-        return
-      }
-      setItemList(res);
-    });
-  }, [categoryId]);
+    const db = getFirestore();
+    const itemCollection = db.collection("items");
 
+    itemCollection.get().then((qs) => {
+      if (qs.size === 0) {
+        console.log("No hay registros");
+      }
+      setItemList(qs.docs.map(doc => { return { id: doc.id, ...doc.data() } }));
+    }).catch((error) => {
+      console.log(error);
+    })
+
+  }, [])
 
   return (
     <>
