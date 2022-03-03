@@ -9,7 +9,6 @@ export default function CartContext({ children }) {
     const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
-        console.log(cartList);
         itemTotalCalc();
     }, [cartList]);
 
@@ -25,6 +24,8 @@ export default function CartContext({ children }) {
             setCartList([...cartList, item]);
         }
     }
+
+  
 
     function incrementItemQuantity(item) {
 

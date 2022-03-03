@@ -6,6 +6,7 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CartContext from "./context/cartContext";
 import Cart from "./Components/Cart";
+import NewOrder from "./Components/newOrder";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               </Route>
               <Route path={"/cart"}>
                 <Cart></Cart>
+              </Route>
+              <Route path={"/formulario"}>
+                <NewOrder></NewOrder>
               </Route>
             </section>
           </Switch>

@@ -54,7 +54,11 @@ export default function Cart() {
                                 })}
                             </tbody>
                         </Table>
-                        <Button>Terminar Compra</Button>
+                        <Button variant="outline-primary" size="sm">
+                            <Link to={`/formulario`}>
+                                Finalizar compra
+                            </Link>
+                        </Button>
                     </div>
                 )
                 :
